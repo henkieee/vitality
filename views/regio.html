@@ -1,0 +1,19 @@
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Regio
+                    <span ng-show='regionCtrl.currentRegion'>
+                        {{ regionCtrl.currentRegion.net }} - {{ regionCtrl.currentRegion.capital }}
+                    </span>
+                </h1>
+                <select class="form-control"  ng-model="regionCtrl.selectedRegion" ng-change='regionCtrl.showRegion(regionCtrl.selectedRegion)' ng-options="region.net as  (region.capital + ' (' + region.net + ')') for region in regionCtrl.regions | orderBy:'capital'">
+                    <option value="">Selecteer een regio</option>
+                </select>
+                <div ng-show='regionCtrl.currentRegion'>
+                    <p>{{ regionCtrl.currentRegion.cities }}</p>
+                </div>
+                <p ng-hide='regionCtrl.currentRegion'>Selecteer een van de volgende regio's</p>
+            </div>
+        </div>
+    </div>
