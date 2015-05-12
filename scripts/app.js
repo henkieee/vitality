@@ -26,9 +26,10 @@ angular.module('myApp', ['ngRoute'])
 
 angular.module('myApp').controller("myRegionCtrl", ['Regions', function(Regions) {
     var vm = this;
+
     Regions.getAll()
-      .then(function(data) {
-          vm.regions = data;
+      .then(function(result) {
+          vm.regions = result.data;
       });
 
     vm.showRegion = function(regionNet)
@@ -36,26 +37,31 @@ angular.module('myApp').controller("myRegionCtrl", ['Regions', function(Regions)
       vm.currentRegion = null;
 
       angular.forEach(vm.regions, function(region) {
-        console.log(region.net);
         if(regionNet == region.net)
         {
           vm.currentRegion = region;
-          console.log(region);
         }
       });
     }
 }]);
 
-angular.module('myApp').service('Regions', ['$http', '$q', function($http, $q) {
-    this.getAll = function()
-    {
-          var deferred = $q.defer();
-
-          $http.get('regions.json').success(function(data) { 
-              deferred.resolve(data);
+angular.module('myApp').service('Regions', ['$http', function($http) {
+    return {
+      /**
+       * Fetch all dutch regions
+       * @returns {HttpPromise}
+       */
+      getAll: function()
+      {
+        return $http.get('regions.json').
+          success(function(data) {
+            console.log('data', data);
+            return data;
+          }).
+          error(function(data) {
+            console.log('Error by fetching all the regions ', data);
           });
-
-          return deferred.promise;
+      }
     };
 }]);
 
