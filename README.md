@@ -1,4 +1,4 @@
-# vitality
+# Vitality
 
 ##Install
 - npm install
