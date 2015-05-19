@@ -1,12 +1,12 @@
 {
   "name": "Vitality",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "A small Angular project to show some vital info about the different regions in the Netherlands",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Henk van Rooijen",
+  "author": "Henk van Rooijen & Koos Dirkse",
   "license": "ISC",
   "devDependencies": {
     "express": "^4.12.3"
