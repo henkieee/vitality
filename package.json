@@ -8,7 +8,10 @@
   },
   "author": "Henk van Rooijen & Koos Dirkse",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "express": "^4.12.3"
+  },
+  "engines": {
+    "node": "0.10.35"
   }
 }
