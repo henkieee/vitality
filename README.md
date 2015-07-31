@@ -1,5 +1,7 @@
-# vitality
+# Vitality
 
-Install: npm install
+##Install
+- npm install
 
-Run: npm start
+##Run
+- npm start
