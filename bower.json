@@ -2,6 +2,8 @@
   "name": "Proposition",
   "version": "1.0.0",
   "dependencies": {
+    "bootstrap-sass": "bootstrap-sass-official#~3.3.5",
+    "font-awesome": "fontawesome#~4.4.0"
   },
   "devDependencies": {}
 }

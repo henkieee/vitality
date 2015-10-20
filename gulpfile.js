@@ -7,7 +7,7 @@ var uglify      = require('gulp-uglify');
 gulp.task('js', function () {
     return gulp.src('js/*js')
         .pipe(browserify())
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
 });
 
@@ -21,7 +21,8 @@ gulp.task('serve', ['js'], function () {
     // Serve files from the root of this project
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./app",
+            browser: 'chrome'
         }
     });
 
