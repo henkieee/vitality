@@ -2,6 +2,20 @@ var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
 var browserify  = require('gulp-browserify');
 var uglify      = require('gulp-uglify');
+var bower       = require('gulp-bower');
+var sass        = require('gulp-sass');
+var sourcemaps  = require('gulp-sourcemaps');
+
+var config = {
+    bowerDir: './bower_components',
+    sassDir: './app/styles'
+};
+
+//install all bower needed bower modules
+gulp.task('bower', function () {
+    return bower()
+        .pipe(gulp.dest(config.bowerDir))
+});
 
 // process JS files and return the stream.
 gulp.task('js', function () {

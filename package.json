@@ -1,19 +1,17 @@
 {
-  "name": "Vitality",
+  "name": "Proposition",
   "version": "0.0.1",
-  "description": "A small Angular project to show some vital info about the different regions in the Netherlands",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "author": "Henk van Rooijen & Koos Dirkse",
+  "description": "A small Angular project...",
+  "author": "Henk van Rooijen",
   "license": "ISC",
   "dependencies": {
     "browser-sync": "^2.9.6",
     "browserify": "^11.2.0",
-    "express": "^4.12.3",
     "gulp": "^3.9.0",
+    "gulp-bower": "0.0.10",
     "gulp-browserify": "^0.5.1",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.4.2",
     "uglify": "^0.1.5"
   },
