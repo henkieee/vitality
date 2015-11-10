@@ -3,8 +3,8 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "../bower_components/font-awesome/scss/font-awesome";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../bower_components/font-awesome/scss/font-awesome";
 @import "app/icons";
 
 body {
@@ -19,12 +19,16 @@ body {
   padding: 0 15px;
 }
 
-@media(min-width:768px) {
-body {
-  padding-top: 100px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+.navbar-inverse {
+  background-color: #00ff00;
 }
 
-.navbar-fixed-top .navbar-brand {
-  padding: 15px 0;
-}
+@media(min-width:768px) {
+  body {
+    padding-top: 100px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+  }
+
+  .navbar-fixed-top .navbar-brand {
+    padding: 15px 0;
+  }
 }

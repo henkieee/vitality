@@ -1,5 +1,10 @@
-angular.module('myApp', ['ngRoute'])
-.config(['$routeProvider', function($routeProvider) {
+require('angular');
+require('angular-route');
+require('angular-resource');
+
+var app = angular.module('myApp', ['ngRoute']);
+
+app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
 
     when('/region', {
@@ -8,23 +13,23 @@ angular.module('myApp', ['ngRoute'])
       controllerAs: 'regionCtrl'
     }).
     when('/vitality', {
-  		templateUrl: 'views/vitality.html'
+        templateUrl: 'views/vitality.html'
     }).
     when('/healthy', {
-  		templateUrl: 'views/vitality.html'
+        templateUrl: 'views/vitality.html'
     }).
     when('/contact', {
-  		templateUrl: 'views/vitality.html'
+        templateUrl: 'views/vitality.html'
     }).
     when('/news', {
-  		templateUrl: 'views/vitality.html'
+        templateUrl: 'views/vitality.html'
     }).
     otherwise({
-    	redirectTo: '/vitality'
-  	});
+        redirectTo: '/vitality'
+    });
 }]);
 
-angular.module('myApp').controller("myRegionCtrl", ['Regions', function(Regions) {
+app.controller("myRegionCtrl", ['Regions', function(Regions) {
     var vm = this;
 
     Regions.getAll()
@@ -45,7 +50,7 @@ angular.module('myApp').controller("myRegionCtrl", ['Regions', function(Regions)
     }
 }]);
 
-angular.module('myApp').service('Regions', ['$http', function($http) {
+app.service('Regions', ['$http', function($http) {
     return {
       /**
        * Fetch all dutch regions
@@ -64,5 +69,6 @@ angular.module('myApp').service('Regions', ['$http', function($http) {
       }
     };
 }]);
+
 
 
